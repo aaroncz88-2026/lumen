@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>引光 LUMEN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<!-- 标题 / 选关 -->
+<div id="menu" class="screen">
+  <h1>引光</h1>
+  <h2>LUMEN</h2>
+  <p class="sub">旋转光路，让灯芯之火抵达每一盏灯</p>
+  <div id="levels"></div>
+  <div class="row">
+    <button id="btnPlay" class="btn primary">开始旅程</button>
+    <button id="btnEndless" class="btn">无尽 · 随机</button>
+  </div>
+  <p class="foot">左键顺时针 · 右键逆时针 · Shift+点击 固定方块 · Z 撤销 · H 提示 · R 重置 · M 静音</p>
+</div>
+
+<!-- 游戏内 -->
+<div id="hud" class="hidden">
+  <div class="top">
+    <button id="btnBack" class="ib" title="返回选关 (Esc)">‹</button>
+    <div class="ttl"><span id="lvNo">第 1 关</span><b id="lvName">初火</b></div>
+    <div class="stats">
+      <div><span>步数</span><b id="moves">0</b><i id="par"></i></div>
+      <div><span>点亮</span><b id="lit">0</b><i id="total"></i></div>
+      <div><span>用时</span><b id="time">0:00</b></div>
+    </div>
+    <button id="btnMute" class="ib" title="静音 (M)">♪</button>
+  </div>
+  <div class="tools">
+    <button id="btnUndo" class="tb">撤销<kbd>Z</kbd></button>
+    <button id="btnHint" class="tb">提示<kbd>H</kbd></button>
+    <button id="btnReset" class="tb">重置<kbd>R</kbd></button>
+  </div>
+  <p id="tip"></p>
+</div>
+
+<!-- 通关 -->
+<div id="win" class="screen hidden">
+  <div class="panel">
+    <span class="cap">CLEAR</span>
+    <h3>灯火通明</h3>
+    <div id="stars"><i>★</i><i>★</i><i>★</i></div>
+    <div class="res">
+      <div><span>步数</span><b id="rMoves">0</b></div>
+      <div><span>最优</span><b id="rPar">0</b></div>
+      <div><span>用时</span><b id="rTime">0:00</b></div>
+    </div>
+    <p id="rNote"></p>
+    <div class="row">
+      <button id="btnNext" class="btn primary">下一关</button>
+      <button id="btnRetry" class="btn">重玩</button>
+      <button id="btnMenu" class="btn">选关</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
